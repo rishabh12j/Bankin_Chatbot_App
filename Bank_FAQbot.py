@@ -11,6 +11,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.model_selection import train_test_split as tts
 from sklearn.preprocessing import LabelEncoder as LE
 from sklearn.svm import SVC
+nltk.download()
 client=discord.Client()
 token ="DdL5vskiAPcpfTYpKfMupsHiJpTj6sta"
 stemmer = LancasterStemmer()
