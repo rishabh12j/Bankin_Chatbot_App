@@ -77,8 +77,8 @@ def chat(str):
     # while True:
     usr = str
     t_usr = tfv.transform([cleanup(usr.strip().lower())])
-    class_ = le.inverse_transform(model.predict(t_usr)[0])
-    questionset = data[data['Class']==class_]
+    class_ = le.inverse_transform(model.predict(t_usr))
+    questionset = data[data['Class']==class_[0]]
     cos_sims = []
     for question in questionset['Question']:
          sims = cosine_similarity(tfv.transform([question]), t_usr)
