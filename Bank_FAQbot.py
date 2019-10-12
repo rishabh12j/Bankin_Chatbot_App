@@ -162,18 +162,20 @@ def chat(str):
 @client.event
 async def on_message(message):
     message_text=message.content.lower()
+    #channel=client.get_channel(566507599101427712)
     #await client.send_message(message.channel, message_text)
     if message.author == client.user:
         return
 
     if message.content.startswith('!hello') or message.content.startswith('hi') or message.content.startswith('heythere'):
         msg = ' Hi {0.author.mention}, Welcome to our bank!'.format(message)
-        await client.send_message(message.channel, msg)
+        await message.channel.send(msg)
+        #await client.send_message(message.channel, msg)
     
     elif "bye" in message.content.lower():
         msg = 'Bye mate {0.author.mention}'.format(message)
-        await client.send_message(message.channel, msg)
-        await client.close()
+        await message.channel.send(msg)
+        await channel.close()
     else:
     #message.content.startswith('show'):  
         print(message.content.lower())
@@ -188,4 +190,4 @@ async def on_ready():
     print(client.user.id)
     print('------')
 
-client.run('NTY2NTA3NTk5MTAxNDI3NzEy.XLVklg.unwJA0gFxD9ePzxf3-LLA3wHOWw')
+client.run('NTY2NTA3NTk5MTAxNDI3NzEy.XaF0Zg.M9KEqndO5v7NzHpikbUarLmyWsQ')
